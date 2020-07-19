@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sample on leeyang1990</title>
+    <link>https://leeyang1990.github.io/tags/sample/</link>
+    <description>Recent content in Sample on leeyang1990</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jun 2020 23:50:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://leeyang1990.github.io/tags/sample/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DOTS Sample</title>
+      <link>https://leeyang1990.github.io/dots-sample/</link>
+      <pubDate>Sat, 27 Jun 2020 23:50:44 +0800</pubDate>
+      
+      <guid>https://leeyang1990.github.io/dots-sample/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
