@@ -3,55 +3,74 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://leeyang1990.github.io/dots-sample/</loc>
-    <lastmod>2020-06-27T23:50:44+08:00</lastmod>
+    <loc>https://example.com/tags/feature/</loc>
+    <lastmod>2020-07-25T12:08:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/</loc>
-    <lastmod>2020-06-27T23:50:44+08:00</lastmod>
+    <loc>https://example.com/</loc>
+    <lastmod>2020-07-25T12:08:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/post/</loc>
-    <lastmod>2020-06-27T23:50:44+08:00</lastmod>
+    <loc>https://example.com/post/</loc>
+    <lastmod>2020-07-25T12:08:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/tags/sample/</loc>
-    <lastmod>2020-06-27T23:50:44+08:00</lastmod>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2020-07-25T12:08:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/tags/</loc>
-    <lastmod>2020-06-27T23:50:44+08:00</lastmod>
+    <loc>https://example.com/tags/unity/</loc>
+    <lastmod>2020-07-25T12:08:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/tags/unity/</loc>
-    <lastmod>2020-06-27T23:50:44+08:00</lastmod>
+    <loc>https://example.com/unity-2020.1-release-%E6%96%B0%E5%8A%9F%E8%83%BD/</loc>
+    <lastmod>2020-07-25T12:08:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/unity2020%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E6%A0%B8%E5%BF%83%E5%BC%95%E6%93%8E%E5%92%8C%E5%88%9B%E4%BD%9C%E8%80%85%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://example.com/tags/dots/</loc>
+    <lastmod>2020-07-21T22:58:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/sample/</loc>
+    <lastmod>2020-07-21T22:58:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/</loc>
+    <lastmod>2020-07-21T22:58:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/unity2020%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E6%A0%B8%E5%BF%83%E5%BC%95%E6%93%8E%E5%92%8C%E5%88%9B%E4%BD%9C%E8%80%85%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-06-18T23:34:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/about/</loc>
+    <loc>https://example.com/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/archives/2020/06/</loc>
+    <loc>https://example.com/archives/2020/06/</loc>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/archives/</loc>
+    <loc>https://example.com/archives/2020/07/</loc>
   </url>
   
   <url>
-    <loc>https://leeyang1990.github.io/categories/</loc>
+    <loc>https://example.com/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
   </url>
   
 </urlset>

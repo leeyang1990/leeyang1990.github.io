@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+    <title>Unity 2020.1 release 新功能 - leeyang&#39;s blog</title>
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' href='https://example.com/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='https://example.com/css/custom.css' type='text/css' media='all' />
+        
+</head>
+    <body class="two-column">
+        <a href="#content">Skip to content</a>
+<div class="wrapper">
+    <header role="banner" class="banner widgets columns-1">
+        <a href="/" rel="home">
+            <h1 class="site">leeyang&#39;s blog</h1>
+            <p></p>
+        </a>
+        <nav role="navigation" aria-label="Primary Navigation">
+
+            <ul class="menu">
+                <li class="menu-item "><a class="menu__link" href="/about/">ABOUT</a></li>
+            </ul>
+            <select onChange="location.href=value;">
+                <option value="/about/" class="menu-item menu-item-type-custom menu-item-object-custom" >ABOUT</option>
+            </select>
+        </nav>
+    </header>
+
+    <br>
+    <div style="width: 100%; max-height: 100px; text-align: center;">
+       
+</div>
+
+    <div class="breadcrumbs">
+        
+    </div>
+        <div id="content" class="content">
+
+<main role="main">
+    <article role="article" class="post type-post format-standard hentry">
+        <header class="post-header">
+            <h1>Unity 2020.1 release 新功能</h1>
+            <div class="post-details">
+                <a rel="bookmark">
+                    <time datetime="2020-07-25T725:128:216">2020-07-25</time>
+                </a>
+				
+            </div>
+        </header>
+
+        <div class="post-content">
+            <h2 id="编辑器和工作流">编辑器和工作流</h2>
+<h3 id="在场景中编辑预制体">在场景中编辑预制体</h3>
+<p>三种显示模式，帮助编辑</p>
+<p><img src="Snipaste_2020-07-25_14-36-44.png" alt="img"></p>
+<h3 id="包管理ui更新">包管理UI更新，</h3>
+<p><img src="Snipaste_2020-07-25_16-40-03.png" alt="img"></p>
+<p>开启预览包需要从project中设置</p>
+<p><img src="Snipaste_2020-07-25_16-37-34.png" alt="img"></p>
+<h3 id="移除了对chromium-editor-framework的支持">移除了对Chromium Editor Framework的支持</h3>
+<p>包体小了</p>
+<h3 id="轴转换烘培">轴转换烘培</h3>
+<p>fbx导入资产可能存在轴方向错误的问题</p>
+<p><img src="Snipaste_2020-07-25_17-58-34.png" alt="img"></p>
+<h3 id="资产导入管线v2">资产导入管线v2</h3>
+<p>单独的属性窗口,单独的组件窗口</p>
+<p><img src="Snipaste_2020-07-25_17-56-50.png" alt="img"></p>
+<h3 id="后台任务窗口">后台任务窗口</h3>
+<p>创建一个组件，引入UnityEditor，通过Process来执行一个异步任务，并通知给任务窗口显示</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> UnityEditor;
+<span style="color:#66d9ef">public</span> IEnumerator Run_OneTask()
+    {
+        <span style="color:#75715e">// Create a new progress indicator
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> progressId = Progress.Start(<span style="color:#e6db74">&#34;Running one task&#34;</span>, <span style="color:#e6db74">&#34;description&#34;</span>);
+
+        <span style="color:#75715e">// Report the progress status at anytime
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> frame = <span style="color:#ae81ff">0</span>; frame &lt;= <span style="color:#ae81ff">1000</span>; ++frame)
+        {
+            Progress.Report(progressId, frame / <span style="color:#ae81ff">1000.0f</span>);
+
+            <span style="color:#75715e">// Do something else
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+        }
+
+        <span style="color:#75715e">// The task is finished. Remove the associated progress indicator.
+</span><span style="color:#75715e"></span>        Progress.Remove(progressId);
+    }
+</code></pre></div><p><img src="Snipaste_2020-07-25_18-21-53.png" alt="img"></p>
+<h3 id="unity-accelerator">Unity Accelerator</h3>
+<p>局域网代理和缓存服务</p>
+<h3 id="addressables-改进">Addressables 改进</h3>
+<h3 id="其他">其他</h3>
+<p>剪切，粘贴</p>
+<p><img src="Snipaste_2020-07-25_20-29-10.png" alt="img"></p>
+<h2 id="程序工具">程序工具</h2>
+<h3 id="profiler-工具改进">Profiler 工具改进</h3>
+<h3 id="profiler-独立程序">Profiler 独立程序</h3>
+<h3 id="visual-studio-集成">Visual Studio 集成</h3>
+<h3 id="new-c-debugging-workflow">New C# debugging workflow</h3>
+<h3 id="支持泛型类型域">支持泛型类型域</h3>
+<p>简化了对泛型类型的支持，旧版本中需要手动实现一个继承自泛型的类型，使用该类型作为属性，新版本中则可以直接在组件中引用泛型类型，让属性面板正确显示我们指定的样式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">namespace</span> OldVersion
+{
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SerializeFieldTest</span> : MonoBehaviour
+   {
+       <span style="color:#66d9ef">public</span> GenericClassOfString stringClassField;
+   }
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericClass</span>&lt;T&gt; 
+   {
+       <span style="color:#66d9ef">public</span> T test;
+   }
+<span style="color:#a6e22e">   [Serializable]</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericClassOfString</span> : GenericClass&lt;<span style="color:#66d9ef">string</span>&gt; { }
+
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">namespace</span> NewVersion
+{
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SerializeFieldTest1</span> : MonoBehaviour
+  {
+      <span style="color:#66d9ef">public</span> GenericClass&lt;<span style="color:#66d9ef">string</span>&gt; stringClassField;
+  }
+<span style="color:#a6e22e">  [Serializable]</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericClass</span>&lt;T&gt;
+  {
+      <span style="color:#66d9ef">public</span> T test;
+  }
+}
+</code></pre></div><h3 id="burst-compiler-13">Burst Compiler 1.3</h3>
+<h3 id="profile-analyzer">Profile Analyzer</h3>
+<h2 id="美术工具">美术工具</h2>
+<h3 id="burst编译提升2d动画性能">Burst编译提升2D动画性能</h3>
+<h3 id="2d-sprite-shape">2D Sprite Shape</h3>
+<p>2D Sprite Shape是2D图形变形工具，适合制作不规则的虚幻贴图设计，迪休自动调整，材质自动修正等方便场景设计的2D图片功能</p>
+<p>1.角样式，不必单独设置角精灵</p>
+<p>2.网格烘培</p>
+<h3 id="2d模板项目更新">2D模板项目更新</h3>
+<h3 id="2d物理更新">2D物理更新</h3>
+<h3 id="cinemachine改进">Cinemachine改进</h3>
+<h3 id="动画更新">动画更新</h3>
+<p>Animation Rigging 是一套用来制作3D骨骼关节行为的的套件，设置很多不同的约束器，让运动看起来更自然，可以大量减少动画文件的浪费</p>
+<p>Kinematica是一套次世代的角色动画系统</p>
+<h2 id="图形">图形</h2>
+<h3 id="相机栈">相机栈</h3>
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.2/manual/camera-stacking.html">learn more</a></p>
+<h3 id="灯光更新">灯光更新</h3>
+<p>灯光设置现在是一个资产文件了，不再是场景文件的一部分</p>
+<h3 id="overlap-free-packing">Overlap-free packing</h3>
+<p>自动打包边距，避免光照贴图的重叠</p>
+<p><img src="Snipaste_2020-07-26_18-46-11.png" alt="img"></p>
+<h3 id="cpu和gpu光照贴图改进">CPU和GPU光照贴图改进</h3>
+<h3 id="光照贴图改进">光照贴图改进</h3>
+<p>减少了烘培时间</p>
+<h3 id="lightmapped-cookie-support">Lightmapped cookie support</h3>
+<h3 id="contributorsreceivers-scene-view-mode">Contributors/Receivers Scene View Mode</h3>
+<h3 id="ray-tracing-for-animated-meshes">Ray tracing for animated Meshes</h3>
+<p>射线追踪动画网格</p>
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@9.0/manual/Ray-Tracing-Getting-Started.html">get started</a></p>
+<h3 id="streaming-virtual-texturing">Streaming Virtual Texturing</h3>
+<p>高分纹理，减少GPU内存和纹理加载时间</p>
+<h2 id="平台">平台</h2>
+<h3 id="输入系统">输入系统</h3>
+<h2 id="pre-release-tech">Pre-release tech</h2>
+<h3 id="ui-toolkit">UI Toolkit</h3>
+<p>用来构建UGUI程序，方便安排UI和风格</p>
+<h3 id="kinematica">Kinematica</h3>
+<p>次世代动画套件</p>
+<h3 id="animation-rigging">Animation Rigging</h3>
+<p>动画绑定，创建骨骼约束，减少动画文件大小</p>
+<h3 id="cinemachine">Cinemachine</h3>
+<p>运镜系统</p>
+<h3 id="device-simulator">Device Simulator</h3>
+<p>设备模拟器</p>
+<h3 id="new-caching-shader-preprocessor">New caching shader preprocessor</h3>
+<p>新的着色器缓存预处理，帮助快速构建</p>
+<h3 id="code-coverage">Code Coverage</h3>
+<p>代码覆盖率测试</p>
+<h3 id="terrain-tools">Terrain Tools</h3>
+<p>地形工具</p>
+<h3 id="streaming-virtual-texturing-1">Streaming Virtual Texturing</h3>
+<p>流式虚拟纹理</p>
+<h3 id="光追">光追</h3>
+<h3 id="ui-builder">UI Builder</h3>
+<p>可视化的编辑器UI构建工具</p>
+<h3 id="havok-physics">Havok Physics</h3>
+<p>Havok物理引擎</p>
+<h3 id="unity-physics">Unity Physics</h3>
+<p>Unity物理系统，基于DOTS技术栈</p>
+<h3 id="memory-profiler">Memory Profiler</h3>
+<p>内存分析器</p>
+<h3 id="vector-graphics">Vector Graphics</h3>
+<p>矢量图形工具，最大的发挥矢量图的优势</p>
+<h3 id="experimental-2d-graphics-features">Experimental 2D Graphics Features</h3>
+<p>2Drender和通用渲染管线兼容，相机栈，2D阴影</p>
+<h3 id="build-report-inspector">Build Report Inspector</h3>
+<p>构建报告属性检查器</p>
+<h3 id="sprite-atlas-v2">Sprite Atlas v2</h3>
+<p>v2图集</p>
+<h3 id="pixars-universal-scene-description">Pixar’s Universal Scene Description</h3>
+<p>皮克斯文件，一种大型资产文件格式</p>
+
+        </div>
+
+
+
+        <footer class="post-footer">
+                
+                
+                
+        
+                
+                
+                
+                <span class="post-tags">
+                        <a href="https://example.com/tags/feature/">Feature</a>&emsp;
+                        
+                        <a href="https://example.com/tags/unity/">Unity</a>&emsp;
+                        
+                </span>
+                
+        </footer>
+        
+<table cellspacing="15" style="width:100%; border: none;">
+    <tr>
+        <td style="text-align: center; border: none; padding: 0px;">
+        </td>
+        <td style="text-align: center; border: none; padding: 0px;">
+        </td>
+    </tr>
+</table>
+
+        
+	
+	
+	<h4>Related Posts</h4>
+	<ol style="margin-left: 30px; list-style-type: decimal;">
+		
+		<li><strong><a href="/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/">简单的DOTS示例-物体旋转</a></strong></li>
+		
+		<li><strong><a href="/unity2020%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E6%A0%B8%E5%BF%83%E5%BC%95%E6%93%8E%E5%92%8C%E5%88%9B%E4%BD%9C%E8%80%85%E5%B7%A5%E5%85%B7/">Unity2020路线图 核心引擎和创作者工具</a></strong></li>
+		
+	</ol>
+	
+
+    </article>
+
+    
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links">
+            <div class="nav-previous">
+                
+                <a class="previous" href="https://example.com/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/"> 简单的DOTS示例-物体旋转</a>
+                
+            </div>
+            <div class="nav-next">
+                
+            </div>
+        </div>
+    </nav>
+    <section>
+        
+    </section>
+    
+
+</main>
+
+
+        <div class="sidebar1 widgets columns-1">
+
+    <aside>
+    
+</aside>
+    <aside class="widget widget_categories">
+        <h2>Categories</h2>
+        <ul class="widget__list">
+        </ul>
+    </aside>
+
+    <aside class="widget widget_tag_cloud">
+        <h2>Tags</h2>
+        <div class="tagcloud"><a class="tag-cloud-link" href="https://example.com/tags/dots/" title="dots" style="font-size: 12pt;">DOTS</a>&emsp;<a class="tag-cloud-link" href="https://example.com/tags/feature/" title="feature" style="font-size: 12pt;">Feature</a>&emsp;<a class="tag-cloud-link" href="https://example.com/tags/sample/" title="sample" style="font-size: 12pt;">Sample</a>&emsp;<a class="tag-cloud-link" href="https://example.com/tags/unity/" title="unity" style="font-size: 12pt;">Unity</a>&emsp;
+        </div>
+    </aside>
+
+    <aside class="widget widget_recent_entries">
+        <h2>Recent Posts</h2>
+        <ul>
+            <li>
+                <a href="/unity-2020.1-release-%E6%96%B0%E5%8A%9F%E8%83%BD/">Unity 2020.1 release 新功能</a>
+            </li>
+            <li>
+                <a href="/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/">简单的DOTS示例-物体旋转</a>
+            </li>
+            <li>
+                <a href="/unity2020%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E6%A0%B8%E5%BF%83%E5%BC%95%E6%93%8E%E5%92%8C%E5%88%9B%E4%BD%9C%E8%80%85%E5%B7%A5%E5%85%B7/">Unity2020路线图 核心引擎和创作者工具</a>
+            </li>
+        </ul>
+    </aside>
+
+    <aside class="widget widget_archive">
+        <h2>Archives</h2>
+        <ul><li><a href="https://example.com/archives/2020/06/">2020/06 (1)</a></li><li><a href="https://example.com/archives/2020/07/">2020/07 (1)</a></li>
+        </ul>
+    </aside>
+
+</div>
+        </div>
+        </div>
+<footer role="contentinfo" class="document-footer contentinfo widgets columns-1">
+
+    <aside class="widget widget_text">
+        <div class="textwidget">
+            <p>© leeyang&#39;s blog / Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/tosi29/inkblotty" target="_blank">Inkblotty</a></p>
+        </div>
+    </aside>
+</footer>
+</div>
+
+    </body>
+</html>
