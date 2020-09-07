@@ -66,6 +66,35 @@
         <article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="post-header">
+				<h2><a href="/%E5%88%9B%E5%BB%BAentity/" rel="bookmark">创建Entity</a></h2>
+				<div class="post-details">
+				<a rel="bookmark">
+					<time datetime="2020-09-07T17:16:02">2020-09-07</time>
+				</a>
+				</div>
+		</header>
+
+		<div class="post-excerpt"><p>
+			1.通过预制体创建entity using Unity.Entities; using Unity.Mathematics; using Unity.Transforms; using UnityEngine; public class Spawner_FromMonoBehaviour : MonoBehaviour { public GameObject Prefab; void Start(){ var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null); var prefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(Prefab, settings); var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager; for (var x = 0; x &lt; 100; x++) { for (var y = 0; y &lt; 100; y++) { // Efficiently instantiate a bunch of entities from the already converted entity prefab var instance = entityManager.Instantiate(prefab); // Place the instantiated entity in a grid with some noise var position = transform.TransformPoint(new float3(x * 1.3F, noise.cnoise(new float2(x, y) * 0.21F) * 2, y * 1.3F)); entityManager.SetComponentData(instance, new Translation {Value = position}); } } } } 2.ConvertToEntity组件 为节点添加Con
+			<a href="/%E5%88%9B%E5%BB%BAentity/" class="more-link">Read more</a>
+		</p></div>
+	</div>
+	
+	<footer class="post-footer">
+		
+		
+		
+
+		
+		
+		
+	</footer>
+
+</article>
+    
+        <article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="post-header">
 				<h2><a href="/unity-2020.1-release-%E6%96%B0%E5%8A%9F%E8%83%BD/" rel="bookmark">Unity 2020.1 release 新功能</a></h2>
 				<div class="post-details">
 				<a rel="bookmark">
@@ -207,6 +236,9 @@
     <aside class="widget widget_recent_entries">
         <h2>Recent Posts</h2>
         <ul>
+            <li>
+                <a href="/%E5%88%9B%E5%BB%BAentity/">创建Entity</a>
+            </li>
             <li>
                 <a href="/unity-2020.1-release-%E6%96%B0%E5%8A%9F%E8%83%BD/">Unity 2020.1 release 新功能</a>
             </li>
