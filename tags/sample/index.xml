@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sample on leeyang&#39;s blog</title>
-    <link>https://example.com/tags/sample/</link>
-    <description>Recent content in Sample on leeyang&#39;s blog</description>
+    <title>Sample on leeyang1990</title>
+    <link>/tags/sample/</link>
+    <description>Recent content in Sample on leeyang1990</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Jul 2020 22:58:21 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/sample/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sample/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>简单的DOTS示例-物体旋转</title>
-      <link>https://example.com/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/</link>
+      <link>/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/</link>
       <pubDate>Tue, 21 Jul 2020 22:58:21 +0800</pubDate>
       
-      <guid>https://example.com/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/</guid>
+      <guid>/%E7%AE%80%E5%8D%95%E7%9A%84dots%E7%A4%BA%E4%BE%8B-%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC/</guid>
       <description>packages: Hybrid Renderer &amp;mdash; 提供用于渲染ECS实体的系统和组件。Hybrid Renderer不是渲染管道：它是一个收集渲染ECS实体所需的数据并将此数据发送到Unity现有渲染架构的系统。 convertToEntity 用来将实例转换为Entity RotationData.cs using Unity.Entities; [GenerateAuthoringComponent] public struct RotationData : IComponentData { public float speed; } 将[GenerateAuthoringComponent]属性添加到ICo</description>
     </item>
     
