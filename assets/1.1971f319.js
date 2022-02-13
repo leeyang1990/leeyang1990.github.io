@@ -1,4 +1,4 @@
-import"./Base.18644cc2.js";import{A as i}from"./App.6224392a.js";import"./vendor.5fd7cc74.js";new i({target:document.getElementById("app")});let l=document.querySelector("main");l.innerHTML+=`
+import"./Base.b26d5ffd.js";import{A as i}from"./App.32c0128d.js";import"./vendor.a4ae880d.js";new i({target:document.getElementById("app")});let l=document.querySelector("main");l.innerHTML+=`
         <div class="post-content">
             <p><img src="Snipaste_2020-06-27_13-18-11.png" alt="img">
 \u8DEF\u7EBF\u56FE\u4E13\u6CE8\u4ECE\u4EE5\u4E0B\u56DB\u4E2A\u65B9\u9762\u8BF4\u660E</p>

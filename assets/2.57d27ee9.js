@@ -1,4 +1,4 @@
-import"./Base.18644cc2.js";import{A as e}from"./App.6224392a.js";import"./vendor.5fd7cc74.js";new e({target:document.getElementById("app")});let p=document.querySelector("main");p.innerHTML+=`
+import"./Base.b26d5ffd.js";import{A as e}from"./App.32c0128d.js";import"./vendor.a4ae880d.js";new e({target:document.getElementById("app")});let p=document.querySelector("main");p.innerHTML+=`
         <div class="post-content">
             <h2>\u7F16\u8F91\u5668\u548C\u5DE5\u4F5C\u6D41</h2>
 <h3>\u5728\u573A\u666F\u4E2D\u7F16\u8F91\u9884\u5236\u4F53</h3>

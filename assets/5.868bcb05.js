@@ -1,4 +1,4 @@
-import"./Base.18644cc2.js";import{A as t}from"./App.6224392a.js";import"./vendor.5fd7cc74.js";new t({target:document.getElementById("app")});let e=document.querySelector("main");e.innerHTML+=`
+import"./Base.b26d5ffd.js";import{A as t}from"./App.32c0128d.js";import"./vendor.a4ae880d.js";new t({target:document.getElementById("app")});let e=document.querySelector("main");e.innerHTML+=`
         <div class="post-content">
             <h3>1.\u901A\u8FC7\u9884\u5236\u4F53\u521B\u5EFAentity</h3>
 <pre><code class="language-csharp">using Unity.Entities;

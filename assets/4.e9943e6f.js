@@ -1,4 +1,4 @@
-import"./Base.18644cc2.js";import{A as e}from"./App.6224392a.js";import"./vendor.5fd7cc74.js";new e({target:document.getElementById("app")});let p=document.querySelector("main");p.innerHTML+=`
+import"./Base.b26d5ffd.js";import{A as e}from"./App.32c0128d.js";import"./vendor.a4ae880d.js";new e({target:document.getElementById("app")});let p=document.querySelector("main");p.innerHTML+=`
         <div class="post-content">
             <h2>SubScene</h2>
 <p>\u8D85\u5927\u4E16\u754C\u89E3\u51B3\u65B9\u6848</p>
