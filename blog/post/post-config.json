@@ -1,5 +1,22 @@
 [
   {
+    "date": "2022-03-27T18:20:00.000Z",
+    "title": "UI Builder",
+    "content": "---\ntitle: \"UI Builder\"\ndate: 2022-03-27 18:20:00\ndescription: \"UI\"\nkeywords: [\"Unity\",\"UI\"]\ndraft: true\ntags: [\"Unity\",\"UI\"]\narchives : \"2022/03\"\n---\n\n\n\n### UI Builder\n\nUI Builder 是工具包UI Toolkit的可视化创作工具 支持编辑器ui和运行时ui的制作，采用描述文档（.uxml）加样式文档（.uss）的类web页面的设计，帮助开发者快速构建符合需求的ui\n\n### why\n\nunity已经有一套ugui系统了，为什么要引入这套设计？游戏开发本身的ui需求较页面开发弱，一旦遇到相对复杂的ui需求，ugui和现有的ui组件就显得捉襟见肘了，实际开发会非常的痛苦，有时候甚至怎么调整，也达不到ui的要求。向先进的web前端开发标准学习，你的选择会更多。\n\n### UI Toolkit \n\n\nUI 工具包是用于开发用户界面 (UI) 的特性、功能、资源和工具的集合。您可以使用 UI 工具包为 Unity 编辑器、运行时调试工具以及游戏和应用程序的运行时 UI 开发自定义 UI 和扩展。\n\nUI 工具包的设计灵感来自标准 Web 技术。如果您有开发网页或应用程序的经验，您的大部分知识可能是可以移植的，并且许多核心概念可能似曾相识\n\n\n### uxml文档\n\n我们通过包管理安装uibuilder，然后在场景中右键创建一个UIDocument\n\n![img](Snipaste_2022-03-27_19-01-22.png)\n\nUIDocument依赖panel setting资产和一个UXML 文档，我们创建对应文件\n\n\n![img](Snipaste_2022-03-27_19-03-31.png)\n\n\n双击创建的uxml文档，打开编辑页面\n\n选择视窗，设置画布尺寸选择画布背景\n\n![img](Snipaste_2022-03-27_20-06-11.png)\n\n\n我们向视窗中添加一个容器，并给他一个背景色，并设置size撑满全屏\n\n![img](Snipaste_2022-03-27_20-15-36.png)\n\n\n为刚才的容器添加一个按钮，你可以通过属性面板，自己尝试设置他的各种属性，非常方便，这样我们得到了一个包含开始按钮的ui面板，我们点击play，查看效果\n\n\n![img](Snipaste_2022-03-27_20-42-50.png)\n![img](Snipaste_2022-03-27_20-43-10.png)\n\n\n\n### style\n\n\n我们给我们的开始按钮添加一个生成一个样式文件，然后创建一个默认样式的按钮，编辑页面左上角是我们刚创建的样式文件，展开后将我们刚创建的样式拖拽到新按钮上，我们发现央视被应用到这个按钮上了。结构和样式分离，我们将样式维护在uss文件中，这样使得ui更加灵活，比如我们有多套ui主题，这样切换完全是无缝的，不需要我们额外维护预制体和代码逻辑了\n\n\n![img](Snipaste_2022-03-27_20-49-10.png)\n![img](Snipaste_2022-03-27_20-49-25.png)\n![img](Snipaste_2022-03-27_20-49-32.png)\n\n\n### 代码\n\n最后我们通过代码获取实例对象\n\n\n![img](Snipaste_2022-03-27_21-18-40.png)\n![img](Snipaste_2022-03-27_21-22-32.png)\n\n### 其他\n\n当然这还只是ui toolkit整个工具的一小部分，你甚至可以将uxml相互嵌套，复用和拓展将非常高效。如果你了解web标准，那就请直接使用他吧，这绝对是个好东西，没有web经验也没关系，unity为我们提供的可视化工具，让我们几乎很小的学习成本就能快速上手\n\n\n",
+    "description": "UI",
+    "keywords": [
+      "Unity",
+      "UI"
+    ],
+    "draft": true,
+    "tags": [
+      "Unity",
+      "UI"
+    ],
+    "archives": "2022/03",
+    "route": "post/2022/3/UI Builder/"
+  },
+  {
     "date": "2020-09-07T09:16:02.000Z",
     "title": "创建Entity",
     "content": "---\ntitle: \"创建Entity\"\ndate: 2020-09-07T17:16:02+08:00\ndraft: false\narchives : \"2020/09\"\n---\n\n### 1.通过预制体创建entity\n\n```csharp\nusing Unity.Entities;\nusing Unity.Mathematics;\nusing Unity.Transforms;\nusing UnityEngine;\npublic class Spawner_FromMonoBehaviour : MonoBehaviour\n{\n    public GameObject Prefab;\n    void Start(){\n        var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null);\n        var prefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(Prefab, settings);\n        var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;\n        for (var x = 0; x < 100; x++)\n        {\n            for (var y = 0; y < 100; y++)\n            {\n                // Efficiently instantiate a bunch of entities from the already converted entity prefab\n                var instance = entityManager.Instantiate(prefab);\n\n                // Place the instantiated entity in a grid with some noise\n                var position = transform.TransformPoint(new float3(x * 1.3F, noise.cnoise(new float2(x, y) * 0.21F) * 2, y * 1.3F));\n                entityManager.SetComponentData(instance, new Translation {Value = position});\n            }\n        }\n    }\n\n}\n\n```\n![img](Zo7lBtUMXi.gif)\n\n### 2.ConvertToEntity组件\n为节点添加ConverToEntity组件，ecs系统会自动将该节点在运行时转换为实体\n\n![img](Snipaste_2020-09-07_17-31-44.png)\n\n### 3.Convert Callback\n```csharp\n//需要ConverToEntity组件\n[RequiresEntityConversion]\npublic class Spawner : MonoBehaviour, IConvertGameObjectToEntity\n{\n    public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)\n    {\n        var data = new CustomData();\n        dstManager.AddComponentData(entity, data);\n    }\n}\n```",
@@ -43,24 +60,6 @@
     ],
     "archives": "2020/07",
     "route": "post/2020/7/简单的DOTS示例-物体旋转/"
-  },
-  {
-    "date": "2020-06-27T15:50:44.000Z",
-    "title": "DOTS Sample",
-    "content": "---\ntitle: \"DOTS Sample\"\ndate: 2020-06-27T23:50:44+08:00\nslug: \"DOTS Sample\"\ndescription: \"\"\nkeywords: [\"Unity\",\"Sample\"]\ndraft: true\ntags: [\"Unity\",\"Sample\"]\narchives : \"2020/06\"\n---\n",
-    "slug": "DOTS Sample",
-    "description": "",
-    "keywords": [
-      "Unity",
-      "Sample"
-    ],
-    "draft": true,
-    "tags": [
-      "Unity",
-      "Sample"
-    ],
-    "archives": "2020/06",
-    "route": "post/2020/6/DOTS Sample/"
   },
   {
     "date": "2020-06-18T15:34:23.000Z",
